@@ -11,7 +11,6 @@
 #import "MMLargeLayout.h"
 @interface MMBaseCollection : UICollectionViewController<UIGestureRecognizerDelegate>{
     UIPanGestureRecognizer *panGestureRecognizer;
-    UIPinchGestureRecognizer *pichGestureRecogonizer;
     BOOL toBeExpandedFlag,transitioningFlag,changedFlag,hasActiveInteraction;
     CGPoint initialPanPoint;
     CGFloat targetY;

@@ -8,9 +8,7 @@
 
 #import "MMAppDelegate.h"
 //#import "HATransitionController.h"
-#import "HACollectionViewSmallLayout.h"
 //#import "HASmallCollectionViewController.h"
-#import "MMViewController.h"
 #import "MMSmallLayout.h"
 #import "MMRootViewController.h"
 @interface MMAppDelegate () <UINavigationControllerDelegate>
@@ -34,36 +32,6 @@
     
     return YES;
 }
-
-
-
-- (void)interactionBeganAtPoint:(CGPoint)point
-{
-    // Very basic communication between the transition controller and the top view controller
-    // It would be easy to add more control, support pop, push or no-op
-//    HASmallCollectionViewController *presentingVC = (HASmallCollectionViewController *)[self.navigationController topViewController];
-//    HASmallCollectionViewController *presentedVC = (HASmallCollectionViewController *)[presentingVC nextViewControllerAtPoint:point];
-//    if (presentedVC!=nil)
-//    {
-//        [self.navigationController pushViewController:presentedVC animated:YES];
-//    }
-//    else
-//    {
-//        [self.navigationController popViewControllerAnimated:YES];
-//    }
-    MMViewController *presentingVC = (MMViewController *)[self.navigationController topViewController];
-    MMViewController *presentedVC = (MMViewController *)[presentingVC nextViewControllerAtPoint:point];
-    if (presentedVC!=nil)
-    {
-        [self.navigationController pushViewController:presentedVC animated:YES];
-    }
-    else
-    {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-}
-
-
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

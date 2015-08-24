@@ -39,8 +39,6 @@
 		551B5E6D1AA8505F003313A0 /* CustomShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B5E6A1AA8505F003313A0 /* CustomShapeView.m */; };
 		551B5E6E1AA8505F003313A0 /* CustomShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B5E6C1AA8505F003313A0 /* CustomShapeLayer.m */; };
 		551B5E711AA85D0C003313A0 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551B5E701AA85D0C003313A0 /* Launch Screen.xib */; };
-		552275AC1A550703007FB91D /* HACollectionViewLargeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 552275A91A550702007FB91D /* HACollectionViewLargeLayout.m */; };
-		552275AD1A550703007FB91D /* HACollectionViewSmallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 552275AB1A550702007FB91D /* HACollectionViewSmallLayout.m */; };
 		6C7C55310FAEE0A87CDAEAEC /* libPods-MMPaper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D4551B79A0901F096211089 /* libPods-MMPaper.a */; };
 		ACF2554819E9B8AC00DE2B40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF2554719E9B8AC00DE2B40 /* Foundation.framework */; };
 		ACF2554A19E9B8AC00DE2B40 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF2554919E9B8AC00DE2B40 /* CoreGraphics.framework */; };
@@ -48,8 +46,6 @@
 		ACF2555219E9B8AC00DE2B40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACF2555019E9B8AC00DE2B40 /* InfoPlist.strings */; };
 		ACF2555419E9B8AC00DE2B40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF2555319E9B8AC00DE2B40 /* main.m */; };
 		ACF2555819E9B8AC00DE2B40 /* MMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF2555719E9B8AC00DE2B40 /* MMAppDelegate.m */; };
-		ACF2555B19E9B8AC00DE2B40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF2555919E9B8AC00DE2B40 /* Main.storyboard */; };
-		ACF2555E19E9B8AC00DE2B40 /* MMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF2555D19E9B8AC00DE2B40 /* MMViewController.m */; };
 		ACF2556019E9B8AC00DE2B40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACF2555F19E9B8AC00DE2B40 /* Images.xcassets */; };
 		ACF2556719E9B8AC00DE2B40 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF2556619E9B8AC00DE2B40 /* XCTest.framework */; };
 		ACF2556819E9B8AC00DE2B40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF2554719E9B8AC00DE2B40 /* Foundation.framework */; };
@@ -152,10 +148,6 @@
 		551B5E6B1AA8505F003313A0 /* CustomShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomShapeLayer.h; sourceTree = "<group>"; };
 		551B5E6C1AA8505F003313A0 /* CustomShapeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomShapeLayer.m; sourceTree = "<group>"; };
 		551B5E701AA85D0C003313A0 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
-		552275A81A550702007FB91D /* HACollectionViewLargeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACollectionViewLargeLayout.h; sourceTree = "<group>"; };
-		552275A91A550702007FB91D /* HACollectionViewLargeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACollectionViewLargeLayout.m; sourceTree = "<group>"; };
-		552275AA1A550702007FB91D /* HACollectionViewSmallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACollectionViewSmallLayout.h; sourceTree = "<group>"; };
-		552275AB1A550702007FB91D /* HACollectionViewSmallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACollectionViewSmallLayout.m; sourceTree = "<group>"; };
 		9BF934BE768E34AB39FECBA1 /* Pods-MMPaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMPaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-MMPaper/Pods-MMPaper.release.xcconfig"; sourceTree = "<group>"; };
 		ACF2554419E9B8AC00DE2B40 /* MMPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF2554719E9B8AC00DE2B40 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -167,9 +159,6 @@
 		ACF2555519E9B8AC00DE2B40 /* MMPaper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MMPaper-Prefix.pch"; sourceTree = "<group>"; };
 		ACF2555619E9B8AC00DE2B40 /* MMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMAppDelegate.h; sourceTree = "<group>"; };
 		ACF2555719E9B8AC00DE2B40 /* MMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMAppDelegate.m; sourceTree = "<group>"; };
-		ACF2555A19E9B8AC00DE2B40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		ACF2555C19E9B8AC00DE2B40 /* MMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMViewController.h; sourceTree = "<group>"; };
-		ACF2555D19E9B8AC00DE2B40 /* MMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMViewController.m; sourceTree = "<group>"; };
 		ACF2555F19E9B8AC00DE2B40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ACF2556519E9B8AC00DE2B40 /* MMPaperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMPaperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF2556619E9B8AC00DE2B40 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -227,8 +216,6 @@
 		550765601A4D402C009B5762 /* MMCollectionCotroller */ = {
 			isa = PBXGroup;
 			children = (
-				ACF2555C19E9B8AC00DE2B40 /* MMViewController.h */,
-				ACF2555D19E9B8AC00DE2B40 /* MMViewController.m */,
 				550765611A4D40EF009B5762 /* MMBaseCollection.h */,
 				550765621A4D40EF009B5762 /* MMBaseCollection.m */,
 				5515B4FF1AA7077B0025C1B9 /* MMRootViewController.h */,
@@ -327,17 +314,6 @@
 			name = Bubble;
 			sourceTree = "<group>";
 		};
-		552275AE1A550707007FB91D /* Base Layout */ = {
-			isa = PBXGroup;
-			children = (
-				552275A81A550702007FB91D /* HACollectionViewLargeLayout.h */,
-				552275A91A550702007FB91D /* HACollectionViewLargeLayout.m */,
-				552275AA1A550702007FB91D /* HACollectionViewSmallLayout.h */,
-				552275AB1A550702007FB91D /* HACollectionViewSmallLayout.m */,
-			);
-			name = "Base Layout";
-			sourceTree = "<group>";
-		};
 		A717AA61BE304F3E28AF405C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,13 +363,11 @@
 		ACF2554D19E9B8AC00DE2B40 /* MMPaper */ = {
 			isa = PBXGroup;
 			children = (
-				552275AE1A550707007FB91D /* Base Layout */,
 				5507656A1A4D72B8009B5762 /* POP */,
 				550765601A4D402C009B5762 /* MMCollectionCotroller */,
 				5507655C1A4D3FE1009B5762 /* MMBaseFlowLayout */,
 				ACF255A519E9C04800DE2B40 /* Images */,
 				ACF2558E19E9B98300DE2B40 /* Transition */,
-				ACF2555919E9B8AC00DE2B40 /* Main.storyboard */,
 				ACF2555F19E9B8AC00DE2B40 /* Images.xcassets */,
 				ACF2555619E9B8AC00DE2B40 /* MMAppDelegate.h */,
 				ACF2555719E9B8AC00DE2B40 /* MMAppDelegate.m */,
@@ -543,7 +517,6 @@
 				ACF2559F19E9BE2D00DE2B40 /* five.jpg in Resources */,
 				ACF2555219E9B8AC00DE2B40 /* InfoPlist.strings in Resources */,
 				ACF2559219E9BB3400DE2B40 /* 2.png in Resources */,
-				ACF2555B19E9B8AC00DE2B40 /* Main.storyboard in Resources */,
 				551B5E651AA849E4003313A0 /* Talk-50.png in Resources */,
 				550765A41A4D72B8009B5762 /* InfoPlist.strings in Resources */,
 				551B5E711AA85D0C003313A0 /* Launch Screen.xib in Resources */,
@@ -604,7 +577,6 @@
 				ACF2555819E9B8AC00DE2B40 /* MMAppDelegate.m in Sources */,
 				ACF2558B19E9B94300DE2B40 /* HATransitionLayout.m in Sources */,
 				550765AD1A4D72B8009B5762 /* POPBasicAnimation.mm in Sources */,
-				ACF2555E19E9B8AC00DE2B40 /* MMViewController.m in Sources */,
 				551B5E6E1AA8505F003313A0 /* CustomShapeLayer.m in Sources */,
 				5507655B1A4D3FD9009B5762 /* MMSmallLayout.m in Sources */,
 				550765B11A4D72B8009B5762 /* POPGeometry.mm in Sources */,
@@ -623,12 +595,10 @@
 				550765B41A4D72B8009B5762 /* POPPropertyAnimation.mm in Sources */,
 				550765B71A4D72B8009B5762 /* TransformationMatrix.cpp in Sources */,
 				550765B31A4D72B8009B5762 /* POPMath.mm in Sources */,
-				552275AC1A550703007FB91D /* HACollectionViewLargeLayout.m in Sources */,
 				550765A81A4D72B8009B5762 /* POPAnimationEvent.mm in Sources */,
 				550765AA1A4D72B8009B5762 /* POPAnimationRuntime.mm in Sources */,
 				5507655F1A4D3FFE009B5762 /* MMLargeLayout.m in Sources */,
 				550765A91A4D72B8009B5762 /* POPAnimationExtras.mm in Sources */,
-				552275AD1A550703007FB91D /* HACollectionViewSmallLayout.m in Sources */,
 				550765AF1A4D72B8009B5762 /* POPCustomAnimation.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,14 +636,6 @@
 				ACF2555119E9B8AC00DE2B40 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		ACF2555919E9B8AC00DE2B40 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ACF2555A19E9B8AC00DE2B40 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		ACF2556F19E9B8AC00DE2B40 /* InfoPlist.strings */ = {

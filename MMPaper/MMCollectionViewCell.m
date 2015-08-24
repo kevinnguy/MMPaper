@@ -15,12 +15,8 @@
     self=[super initWithFrame:frame];
     indexData = -1;
     if(self){
-//        self.backgroundColor = [UIColor whiteColor];
         self.layer.cornerRadius = 4;
         self.clipsToBounds = YES;
-        
-//        UIImageView *backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"2"]];
-//        self.backgroundView = backgroundView;
     }
     return self;
 }
@@ -30,7 +26,4 @@
     cellSize=size;
 }
 
--(void)layout{
-    
-}
 @end
