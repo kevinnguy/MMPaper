@@ -7,11 +7,12 @@
 //
 
 #import "MMBaseCollection.h"
-#define MAX_COUNT 20
 #define CELL_ID @"CELL_ID"
 #import "HATransitionLayout.h"
 #import "MMCollectionViewCell.h"
 #import "POP.h"
+
+#import <UIColor+Chameleon.h>
 
 @implementation MMBaseCollection
 
@@ -30,6 +31,11 @@
         _largeLayout=[[MMLargeLayout alloc] init];
         [self gestureInit];
         
+        // Color array
+        self.colorArray = [NSMutableArray new];
+        for (NSInteger i = 0; i < 20; i++) {
+            [self.colorArray addObject:[UIColor randomFlatColor]];
+        }
     }
     return self;
 }
@@ -164,7 +170,7 @@
         
         
         //update position only when point.y is between initialPoint.y and targety
-        NSLog(@"%f", progress);
+//        NSLog(@"%f", progress);
         if ((point.y - initialPanPoint.y) * (point.y - targetY) <= 0) {
             
            
@@ -334,21 +340,17 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MMCollectionViewCell *cell = (MMCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CELL_ID forIndexPath:indexPath];
-//    cell.backgroundColor = [UIColor whiteColor];
-//    cell.layer.cornerRadius = 4;
-//    cell.clipsToBounds = YES;
-//    
-//    UIImageView *backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"2"]];
-//    cell.backgroundView = backgroundView;
+
     [cell setIndex:indexPath.row withSize:(toBeExpandedFlag?_smallLayout.itemSize:_largeLayout.itemSize)];
 
+    cell.backgroundColor = self.colorArray[indexPath.item];
     
     return cell;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return MAX_COUNT;
+    return self.colorArray.count;
 }
 
 
@@ -465,5 +467,21 @@
         }
     }
 
+}
+
+#pragma mark - LXReorderableCollectionViewDataSource methods
+
+- (void)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath willMoveToIndexPath:(NSIndexPath *)toIndexPath {
+    UIColor *color = self.colorArray[fromIndexPath.item];
+    [self.colorArray removeObjectAtIndex:fromIndexPath.item];
+    [self.colorArray insertObject:color atIndex:toIndexPath.item];
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath canMoveToIndexPath:(NSIndexPath *)toIndexPath {
+    return YES;
 }
 @end

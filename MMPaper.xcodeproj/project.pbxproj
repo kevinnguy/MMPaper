@@ -41,6 +41,7 @@
 		551B5E711AA85D0C003313A0 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551B5E701AA85D0C003313A0 /* Launch Screen.xib */; };
 		552275AC1A550703007FB91D /* HACollectionViewLargeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 552275A91A550702007FB91D /* HACollectionViewLargeLayout.m */; };
 		552275AD1A550703007FB91D /* HACollectionViewSmallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 552275AB1A550702007FB91D /* HACollectionViewSmallLayout.m */; };
+		6C7C55310FAEE0A87CDAEAEC /* libPods-MMPaper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D4551B79A0901F096211089 /* libPods-MMPaper.a */; };
 		ACF2554819E9B8AC00DE2B40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF2554719E9B8AC00DE2B40 /* Foundation.framework */; };
 		ACF2554A19E9B8AC00DE2B40 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF2554919E9B8AC00DE2B40 /* CoreGraphics.framework */; };
 		ACF2554C19E9B8AC00DE2B40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF2554B19E9B8AC00DE2B40 /* UIKit.framework */; };
@@ -75,6 +76,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BB203C6E1A1CFB2F46F39DA /* Pods-MMPaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMPaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MMPaper/Pods-MMPaper.debug.xcconfig"; sourceTree = "<group>"; };
+		4D4551B79A0901F096211089 /* libPods-MMPaper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MMPaper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		550765591A4D3FD9009B5762 /* MMSmallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSmallLayout.h; sourceTree = "<group>"; };
 		5507655A1A4D3FD9009B5762 /* MMSmallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSmallLayout.m; sourceTree = "<group>"; };
 		5507655D1A4D3FFE009B5762 /* MMLargeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLargeLayout.h; sourceTree = "<group>"; };
@@ -153,6 +156,7 @@
 		552275A91A550702007FB91D /* HACollectionViewLargeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACollectionViewLargeLayout.m; sourceTree = "<group>"; };
 		552275AA1A550702007FB91D /* HACollectionViewSmallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACollectionViewSmallLayout.h; sourceTree = "<group>"; };
 		552275AB1A550702007FB91D /* HACollectionViewSmallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACollectionViewSmallLayout.m; sourceTree = "<group>"; };
+		9BF934BE768E34AB39FECBA1 /* Pods-MMPaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMPaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-MMPaper/Pods-MMPaper.release.xcconfig"; sourceTree = "<group>"; };
 		ACF2554419E9B8AC00DE2B40 /* MMPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF2554719E9B8AC00DE2B40 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ACF2554919E9B8AC00DE2B40 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -190,6 +194,7 @@
 				ACF2554A19E9B8AC00DE2B40 /* CoreGraphics.framework in Frameworks */,
 				ACF2554C19E9B8AC00DE2B40 /* UIKit.framework in Frameworks */,
 				ACF2554819E9B8AC00DE2B40 /* Foundation.framework in Frameworks */,
+				6C7C55310FAEE0A87CDAEAEC /* libPods-MMPaper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +338,15 @@
 			name = "Base Layout";
 			sourceTree = "<group>";
 		};
+		A717AA61BE304F3E28AF405C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BB203C6E1A1CFB2F46F39DA /* Pods-MMPaper.debug.xcconfig */,
+				9BF934BE768E34AB39FECBA1 /* Pods-MMPaper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ACF2553B19E9B8AC00DE2B40 = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +359,7 @@
 				ACF2556C19E9B8AC00DE2B40 /* MMPaperTests */,
 				ACF2554619E9B8AC00DE2B40 /* Frameworks */,
 				ACF2554519E9B8AC00DE2B40 /* Products */,
+				A717AA61BE304F3E28AF405C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -364,6 +379,7 @@
 				ACF2554919E9B8AC00DE2B40 /* CoreGraphics.framework */,
 				ACF2554B19E9B8AC00DE2B40 /* UIKit.framework */,
 				ACF2556619E9B8AC00DE2B40 /* XCTest.framework */,
+				4D4551B79A0901F096211089 /* libPods-MMPaper.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -376,7 +392,6 @@
 				550765601A4D402C009B5762 /* MMCollectionCotroller */,
 				5507655C1A4D3FE1009B5762 /* MMBaseFlowLayout */,
 				ACF255A519E9C04800DE2B40 /* Images */,
-				ACF2558D19E9B96D00DE2B40 /* Base Collection */,
 				ACF2558E19E9B98300DE2B40 /* Transition */,
 				ACF2555919E9B8AC00DE2B40 /* Main.storyboard */,
 				ACF2555F19E9B8AC00DE2B40 /* Images.xcassets */,
@@ -416,13 +431,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		ACF2558D19E9B96D00DE2B40 /* Base Collection */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Base Collection";
-			sourceTree = "<group>";
-		};
 		ACF2558E19E9B98300DE2B40 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,9 +460,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACF2557619E9B8AC00DE2B40 /* Build configuration list for PBXNativeTarget "MMPaper" */;
 			buildPhases = (
+				0F8D2DCBB357A2521022F0CE /* Check Pods Manifest.lock */,
 				ACF2554019E9B8AC00DE2B40 /* Sources */,
 				ACF2554119E9B8AC00DE2B40 /* Frameworks */,
 				ACF2554219E9B8AC00DE2B40 /* Resources */,
+				4910374231D28FFFD94B088B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -549,6 +559,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F8D2DCBB357A2521022F0CE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4910374231D28FFFD94B088B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MMPaper/Pods-MMPaper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ACF2554019E9B8AC00DE2B40 /* Sources */ = {
@@ -716,6 +759,7 @@
 		};
 		ACF2557719E9B8AC00DE2B40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BB203C6E1A1CFB2F46F39DA /* Pods-MMPaper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -729,6 +773,7 @@
 		};
 		ACF2557819E9B8AC00DE2B40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BF934BE768E34AB39FECBA1 /* Pods-MMPaper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

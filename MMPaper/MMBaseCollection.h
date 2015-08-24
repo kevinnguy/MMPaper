@@ -13,8 +13,6 @@
     UIPanGestureRecognizer *panGestureRecognizer;
     UIPinchGestureRecognizer *pichGestureRecogonizer;
     BOOL toBeExpandedFlag,transitioningFlag,changedFlag,hasActiveInteraction;
-//    MMSmallLayout *smallLayout;
-//    MMLargeLayout *largeLayout;
     CGPoint initialPanPoint;
     CGFloat targetY;
     
@@ -27,5 +25,7 @@
 @property (nonatomic) CGFloat initialPinchDistance;
 @property (nonatomic) CGPoint initialPinchPoint;
 - (UICollectionViewController*)nextViewControllerAtPoint:(CGPoint)point;
+
+@property (nonatomic, strong) NSMutableArray *colorArray;
 
 @end

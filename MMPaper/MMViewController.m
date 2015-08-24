@@ -11,7 +11,8 @@
 #import "MMLargeLayout.h"
 
 #import "HATransitionLayout.h"
-#define MAX_COUNT 20
+
+
 #define CELL_ID @"CELL_ID"
 
 @interface MMViewController ()
@@ -47,12 +48,13 @@
     
     // ImageView on top
     _topImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 320)];
+    _topImage.image = [UIImage imageNamed:@"one.jpg"];
     _reflected = [[UIImageView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(_topImage.bounds), 320, 320)];
+    _reflected.image = [UIImage imageNamed:@"one.jpg"];
     [_mainView addSubview:_topImage];
     [_mainView addSubview:_reflected];
     
     _topImage.contentMode=UIViewContentModeScaleAspectFill;
-    //_reflected.contentMode=UIViewContentModeScaleAspectFill;
     
     
     // Reflect imageView
@@ -79,89 +81,10 @@
     UIView *perfectPixelContent = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(_topImage.bounds), 1)];
     perfectPixelContent.backgroundColor = [UIColor colorWithWhite:1 alpha:0.2];
     [_topImage addSubview:perfectPixelContent];
-    
-    
-    // Label logo
-    UILabel *logo = [[UILabel alloc] initWithFrame:CGRectMake(15, 12, 290, 0)];
-    logo.backgroundColor = [UIColor clearColor];
-    logo.textColor = [UIColor whiteColor];
-    logo.font = [UIFont fontWithName:@"Helvetica-Bold" size:22];
-    logo.text = @"Paper";
-    [logo sizeToFit];
-    // Label Shadow
-    [logo setClipsToBounds:NO];
-    [logo.layer setShadowOffset:CGSizeMake(0, 0)];
-    [logo.layer setShadowColor:[[UIColor blackColor] CGColor]];
-    [logo.layer setShadowRadius:1.0];
-    [logo.layer setShadowOpacity:0.6];
-    [_mainView addSubview:logo];
-    
-    
-    // Label Title
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(15, logo.frame.origin.y + CGRectGetHeight(logo.frame) + 8, 290, 0)];
-    title.backgroundColor = [UIColor clearColor];
-    title.textColor = [UIColor whiteColor];
-    title.font = [UIFont fontWithName:@"Helvetica-Bold" size:13];
-    title.text = @"Mukesh Mandora";
-    [title sizeToFit];
-    // Label Shadow
-    [title setClipsToBounds:NO];
-    [title.layer setShadowOffset:CGSizeMake(0, 0)];
-    [title.layer setShadowColor:[[UIColor blackColor] CGColor]];
-    [title.layer setShadowRadius:1.0];
-    [title.layer setShadowOpacity:0.6];
-    [_mainView addSubview:title];
-    
-    
-    // Label SubTitle
-    UILabel *subTitle = [[UILabel alloc] initWithFrame:CGRectMake(15, title.frame.origin.y + CGRectGetHeight(title.frame), 290, 0)];
-    subTitle.backgroundColor = [UIColor clearColor];
-    subTitle.textColor = [UIColor whiteColor];
-    subTitle.font = [UIFont fontWithName:@"Helvetica" size:13];
-    subTitle.text = @"Extension Of HAPaperViewController(Heberti Almeida)";
-    subTitle.lineBreakMode = NSLineBreakByWordWrapping;
-    subTitle.numberOfLines = 0;
-    [subTitle sizeToFit];
-    // Label Shadow
-    [subTitle setClipsToBounds:NO];
-    [subTitle.layer setShadowOffset:CGSizeMake(0, 0)];
-    [subTitle.layer setShadowColor:[[UIColor blackColor] CGColor]];
-    [subTitle.layer setShadowRadius:1.0];
-    [subTitle.layer setShadowOpacity:0.6];
-    [_mainView addSubview:subTitle];
-    
-    
-    // First Load
-    [self changeSlide];
-    
-    // Loop gallery - fix loop: http://bynomial.com/blog/?p=67
-    NSTimer *timer = [NSTimer timerWithTimeInterval:5.0f target:self selector:@selector(changeSlide) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
--(void)setPageControl{
-    UIScrollView * pagescrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, UIAppDelegate.itemHeight-254)];
-    pagescrollView.contentSize = CGSizeMake(pagescrollView.frame.size.width * 3, pagescrollView.frame.size.height);
-    pagescrollView.delegate = self;
-    
-    UIPageControl * pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, UIAppDelegate.itemHeight-270, pagescrollView.frame.size.width, 20)];
-    pageControl.numberOfPages = pagescrollView.contentSize.width/pagescrollView.frame.size.width;
-    [pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
-    
-//    [self.view addSubview:pagescrollView];
-//    [self.view addSubview:pageControl];
-    [self.view insertSubview:pagescrollView aboveSubview:self.collectionView];
-     [self.view insertSubview:pageControl aboveSubview:self.collectionView];
-}
 #pragma mark collection view
 
 - (BOOL)prefersStatusBarHidden
@@ -185,22 +108,5 @@
     return nextCollectionViewController;
 }
 
-#pragma mark - Change slider
-- (void)changeSlide
-{
-    //    if (_fullscreen == NO && _transitioning == NO) {
-    if(_slide > _galleryImages.count-1) _slide = 0;
-    
-    UIImage *toImage = [UIImage imageNamed:_galleryImages[_slide]];
-    [UIView transitionWithView:_mainView
-                      duration:0.6f
-                       options:UIViewAnimationOptionTransitionCrossDissolve | UIViewAnimationCurveEaseInOut
-                    animations:^{
-                        _topImage.image = toImage;
-                        _reflected.image = toImage;
-                    } completion:nil];
-    _slide++;
-    //    }
-}
 
 @end
