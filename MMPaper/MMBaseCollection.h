@@ -20,11 +20,6 @@
 @property (nonatomic)MMSmallLayout *smallLayout;
 @property (nonatomic) MMLargeLayout *largeLayout;
 
-
-@property (nonatomic) CGFloat initialPinchDistance;
-@property (nonatomic) CGPoint initialPinchPoint;
-- (UICollectionViewController*)nextViewControllerAtPoint:(CGPoint)point;
-
 @property (nonatomic, strong) NSMutableArray *colorArray;
 
 @end

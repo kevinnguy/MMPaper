@@ -47,16 +47,7 @@
     [self.collectionView addGestureRecognizer:panGestureRecognizer];
 }
 
--(void)changeLayout:(UITapGestureRecognizer*)sender{
-    
-    if(toBeExpandedFlag){
-        [self.collectionView setCollectionViewLayout:_largeLayout animated:YES completion:nil];
-        toBeExpandedFlag=NO;
- 
-    }
-   
-    
-}
+
 -(void)handlePan:(UIPanGestureRecognizer *)sender{
     CGPoint point = [sender locationInView:sender.view];
     CGPoint velocity = [sender velocityInView:sender.view];
@@ -67,10 +58,6 @@
     if(sender.state==UIGestureRecognizerStateBegan){
         changedFlag = false;     //clear flag here
         if ([self getTransitionLayout ] ) {
-            //animation is interrupted by user action
-            //initialPoint.y and targetY has to be updated according to progress
-            //and touched position
-            
             [self updatePositionData:point withProgess:[self getTransitionLayout ].transitionProgress];
             
             return;
@@ -94,11 +81,7 @@
         
 
         
-        [self.collectionView startInteractiveTransitionToCollectionViewLayout:(toBeExpandedFlag?_largeLayout:_smallLayout) completion:^(BOOL completed, BOOL finished) {
-//            hasActiveInteraction=NO;
-            [self startGesture];
-            
-        }];
+        [self.collectionView startInteractiveTransitionToCollectionViewLayout:(toBeExpandedFlag?_largeLayout:_smallLayout) completion:nil];
         transitioningFlag = true;
 
     }
@@ -140,14 +123,26 @@
 -(void)finishInteractiveTransition:(CGFloat)progress inDuration:(CGFloat)duration withSucess:(BOOL)success{
     if ((success && (progress >= 1.0)) || (!success && (progress <= 0.0))) {
         // no need to animate
-        [self finishUpInteraction:success];
+        if (!transitioningFlag) {
+            return;
+        }
         
+        if (success) {
+            [self updateWithProgress:1.0];
+            [self.collectionView finishInteractiveTransition];
+            transitioningFlag = false;
+            toBeExpandedFlag = !toBeExpandedFlag;
+        }
+        else{
+            [self updateWithProgress:0.0];
+            
+            [self.collectionView cancelInteractiveTransition];
+            transitioningFlag = false;
+        }
     }
 }
 
 -(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
-    
-    
     if(gestureRecognizer == panGestureRecognizer) {
         
         
@@ -172,9 +167,8 @@
             return false;
         }
     }
-    else{
-        return true;
-    }
+
+    return true;
 }
 
 
@@ -196,67 +190,22 @@
     if ([self.collectionView.collectionViewLayout isKindOfClass:[UICollectionViewTransitionLayout class]]) {
         return (UICollectionViewTransitionLayout *)self.collectionView.collectionViewLayout ;
     }
-    else{
-        return nil;
-    }
+
+    return nil;
 }
 
 -(void)updateWithProgress:(CGFloat)progress{
-    if ([self getTransitionLayout]){
-        [self getTransitionLayout].transitionProgress = progress;
-    }
-}
-
--(void)startGesture{
-    panGestureRecognizer.enabled=true;
-}
-
--(void)stopGesture{
-    panGestureRecognizer.enabled=false;
-}
-
--(void)finishUpInteraction:(BOOL)success{
-    if (!transitioningFlag) {
-        return;
-    }
-    
-    if (success) {
-        [self updateWithProgress:1.0];
-        [self.collectionView finishInteractiveTransition];
-        transitioningFlag = false;
-        toBeExpandedFlag = !toBeExpandedFlag;
-    }
-    else{
-        [self updateWithProgress:0.0];
-      
-        [self.collectionView cancelInteractiveTransition];
-        transitioningFlag = false;
-    }
+    ((UICollectionViewTransitionLayout *)self.collectionView.collectionViewLayout).transitionProgress = progress;
 }
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     return false;
 }
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    // Adjust scrollView decelerationRate
-    self.collectionView.decelerationRate = self.class != [MMBaseCollection class] ? UIScrollViewDecelerationRateNormal : UIScrollViewDecelerationRateFast;
-}
 
-#pragma mark - Hide StatusBar
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MMCollectionViewCell *cell = (MMCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CELL_ID forIndexPath:indexPath];
-
-    [cell setIndex:indexPath.row withSize:(toBeExpandedFlag?_smallLayout.itemSize:_largeLayout.itemSize)];
-
     cell.backgroundColor = self.colorArray[indexPath.item];
     
     return cell;
@@ -266,13 +215,6 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.colorArray.count;
 }
-
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 1;
-}
-
 
 
 - (UICollectionViewTransitionLayout *)collectionView:(UICollectionView *)collectionView

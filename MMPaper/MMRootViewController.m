@@ -34,7 +34,6 @@
     _mainView = [[UIView alloc] initWithFrame:self.view.bounds];
     _mainView.clipsToBounds = YES;
     _mainView.layer.cornerRadius = 4;
-//    [self.view insertSubview:_mainView belowSubview:self.baseController.collectionView];
     [self.view addSubview:_mainView];
     
     // ImageView on top

@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMCollectionViewCell : UICollectionViewCell{
-    NSUInteger indexData;
-    CGSize cellSize;
+@interface MMCollectionViewCell : UICollectionViewCell
 
-}
--(void)setIndex:(NSUInteger)index withSize:(CGSize)size;
 @end

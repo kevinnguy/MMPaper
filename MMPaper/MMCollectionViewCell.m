@@ -13,7 +13,6 @@
 @implementation MMCollectionViewCell
 -(id)initWithFrame:(CGRect)frame{
     self=[super initWithFrame:frame];
-    indexData = -1;
     if(self){
         self.layer.cornerRadius = 4;
         self.clipsToBounds = YES;
@@ -21,9 +20,5 @@
     return self;
 }
 
--(void)setIndex:(NSUInteger )index withSize:(CGSize)size{
-    indexData=index;
-    cellSize=size;
-}
 
 @end
